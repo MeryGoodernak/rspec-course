@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+require 'card'
+
 RSpec.describe 'Card' do
   it 'hase a type' do
     card = Card.new('spades')
