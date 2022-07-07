@@ -3,12 +3,13 @@
 require 'card'
 
 RSpec.describe Card do
+  before do
+    @card = Card.new('aces', 'spades')
+  end
   it 'hase a rank' do
-    card = Card.new('aces', 'spades')
-    expect(card.rank).to eq('aces')
+    expect(@card.rank).to eq('aces')
   end
   it 'hase a suit' do
-    card = Card.new('aces', 'spades')
-    expect(card.suit).to eq('spades')
+    expect(@card.suit).to eq('spades')
   end
 end
