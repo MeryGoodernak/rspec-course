@@ -7,6 +7,14 @@ RSpec.describe 'nested hooks' do
     puts 'OUTER Before example.'
   end
 
+  after(:context) do
+    puts 'OUTER After context.'
+  end
+
+  after(:example) do
+    puts 'OUTER After example.'
+  end
+
   it 'should do some math' do
     expect(2 + 2).to eq(4)
   end
@@ -18,6 +26,14 @@ RSpec.describe 'nested hooks' do
 
     before(:example) do
       puts 'INNER Before example.'
+    end
+
+    after(:context) do
+      puts 'INNER After context.'
+    end
+
+    after(:example) do
+      puts 'INNER After example.'
     end
 
     it 'should do some basic math' do
