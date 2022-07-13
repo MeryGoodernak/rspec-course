@@ -14,4 +14,6 @@ RSpec.describe Array do
   it 'creates a new object for a new example' do
     expect(sally).to eq(%w[a b])
   end
+
+  it { is_expected.to eq(%w[a b]) }
 end
