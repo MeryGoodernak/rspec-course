@@ -2,7 +2,7 @@
 
 RSpec.describe Array do
   subject(:sally) do
-    ['a', 'b']
+    %w[a b]
   end
 
   it 'caches the object within an example' do
@@ -12,6 +12,6 @@ RSpec.describe Array do
   end
 
   it 'creates a new object for a new example' do
-    expect(sally).to eq(['a', 'b'])
+    expect(sally).to eq(%w[a b])
   end
 end
