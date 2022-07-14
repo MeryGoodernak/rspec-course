@@ -11,4 +11,12 @@ RSpec.describe 'comprison matchers' do
 
     expect(22).not_to be > 23
   end
+
+  describe 100 do
+    it { is_expected.to be > 90 }
+    it { is_expected.to be < 900 }
+    it { is_expected.to be >= 100 }
+    it { is_expected.to be <= 100 }
+    it { is_expected.not_to be < 90 }
+  end
 end
