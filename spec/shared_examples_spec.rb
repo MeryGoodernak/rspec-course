@@ -2,6 +2,10 @@ RSpec.shared_examples 'a Ruby object with a length of three' do
   it 'should be 3 in length' do
     expect(subject.length).to eq(3)
   end
+
+  it 'should not be 4 in length' do
+    expect(subject.length).not_to eq(4)
+  end
 end
 
 RSpec.describe Hash do
