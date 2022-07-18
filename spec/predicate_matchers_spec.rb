@@ -11,8 +11,16 @@ RSpec.describe 'predicate matchers' do
   end
 
   it { is_expected.to start_with 'predicate' }
+  it { is_expected.to end_with 'chers' }
 
   describe 0 do
     it { is_expected.to be_zero }
+  end
+
+  describe [:a, :b, :c] do
+    it { is_expected.to start_with(:a) }
+    it { is_expected.to start_with(:a, :b) }
+    it { is_expected.to end_with(:c) }
+    it { is_expected.to end_with(:b, :c) }
   end
 end
