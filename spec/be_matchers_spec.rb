@@ -18,4 +18,8 @@ RSpec.describe 'be truthy or falsy matchers' do
     expect(false).to be_falsy
     expect(nil).to be_falsy
   end
+
+  describe nil do
+    it { is_expected.to be_nil }
+  end
 end
