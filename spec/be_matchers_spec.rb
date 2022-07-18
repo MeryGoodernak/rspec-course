@@ -13,4 +13,9 @@ RSpec.describe 'be truthy or falsy matchers' do
   describe ['e'] do
     it { is_expected.to be_truthy }
   end
+
+  it 'test the falsiness' do
+    expect(false).to be_falsy
+    expect(nil).to be_falsy
+  end
 end
