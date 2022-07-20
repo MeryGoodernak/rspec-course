@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
-RSpec.describe 'raise error matcher' do
+class CustomError < StandardError; end
 
+RSpec.describe 'raise error matcher' do
   def some_method
     x
   end
-
-  class CustomError < StandardError; end
 
   it 'checks for a specific error' do
     expect { some_method }.to raise_error(NameError)
