@@ -12,4 +12,14 @@ RSpec.describe Movie do
       subject.start_shooting
     end
   end
+
+  describe '#start_shooting-second edition' do
+    it 'expect an actor to do 4 sections' do
+      expect(stuntman).to receive(:ready?).once
+      expect(stuntman).to receive(:fall_in_fire).exactly(1).times
+      expect(stuntman).to receive(:fall_off_ladder).at_most(1).times
+      expect(stuntman).to receive(:act).at_least(2).times
+      subject.start_shooting
+    end
+  end
 end

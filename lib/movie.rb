@@ -11,5 +11,6 @@ class Movie
     actor.act
     actor.fall_in_fire
     actor.fall_off_ladder
+    actor.act
   end
 end
