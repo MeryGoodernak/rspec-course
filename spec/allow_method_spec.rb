@@ -22,4 +22,15 @@ RSpec.describe 'allow method' do
     arr.push(4)
     expect(arr).to eq([1, 2, 3, 4])
   end
+
+  it 'can return multiple return values in sequence' do
+    arr = [:a, :b, :c]
+    allow(arr).to receive(pop).and_return(:c, :b, :a, nil)
+    expect(arr.pop).to eq(:c)
+    expect(arr.pop).to eq(:b)
+    expect(arr.pop).to eq(:a)
+    expect(arr.pop).to be_nil
+    expect(arr.pop).to be_nil
+
+  end
 end
