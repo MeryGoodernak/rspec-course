@@ -13,4 +13,13 @@ RSpec.describe 'allow method' do
     expect(calculator.add(3, 6)).to eq(15)
     expect(calculator.add('hello')).to eq(15)
   end
+
+  it 'can stub one or more methods on a real object' do
+    arr = [1, 2, 3]
+    allow(arr).to receive(:sum).and_return(10)
+    expect(arr.sum).to eq(10)
+
+    arr.push(4)
+    expect(arr).to eq([1, 2, 3, 4])
+  end
 end
